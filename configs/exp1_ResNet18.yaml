@@ -1,0 +1,42 @@
+exp_name: exp1_ResNet18             # Experiment name.
+
+# Logger options
+resume: False                       # Whether resume training states.
+log_iter: 16                        # How often do you want to log the training stats.
+
+# Optimization options
+max_epoch: 30                       # Maximum number of training epochs.
+batch_size: 64                      # Batch size in training (Classification).
+test_size: 64                       # Batch size in testing.
+weight_decay: 0                     # Weight decay.
+lr: 0.0001                          # Initial learning rate.
+step_size: [10, 20]                 # How often to decay learning rate.
+gamma: 0.5                          # How much to decay learning rate.
+
+# Model options
+model: ResNet18                     # Which model?
+pretrained: True                    # Whether pretrained model in imagenet?
+freeze: False                       # Whether freeze the model before last layer?
+
+# Data options
+num_class: 10                       # Number of categories.
+num_workers: 2                      # Number of data loading threads.
+new_size: [32, 32]                  # Resize image to specific width and high.
+
+# Path and directory
+data_root: [datasets, CIFAR10]       # Where are data and data file saved?
+
+train_file: train.txt               # The file record the index of training data.
+val_file:   val.txt                 # The file record the index of validation data.
+test_file:  test.txt                # The file record the index of testing data.
+class2idx:                          # Class name to id
+    {'airplane': 0, 'automobile': 1, 'bird': 2, 'cat': 3,
+     'deer': 4, 'dog': 5, 'frog': 6, 'horse': 7, 'ship': 8, 'truck': 9}
+
+
+
+
+
+
+
+
